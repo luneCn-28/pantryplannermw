@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
-import { useAuth } from './contexts/AuthContext.jsx'
 import Navbar from './components/common/Navbar.jsx'
 import ProtectedRoute from './components/common/ProtectedRoute.jsx'
 import Home from './pages/Home.jsx'
@@ -9,9 +8,9 @@ import Register from './pages/Register.jsx'
 import UserDashboard from './pages/UserDashboard.jsx'
 import AdminDashboard from './pages/AdminDashboard.jsx'
 
-function App() {
-  const { user } = useAuth()
+import DebugPanel from './components/common/DebugPanel.jsx'
 
+function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -29,6 +28,7 @@ function App() {
           <Route path="*" element={<Home />} />
         </Routes>
       </AnimatePresence>
+      <DebugPanel />
     </div>
   )
 }

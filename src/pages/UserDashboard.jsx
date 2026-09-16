@@ -1,12 +1,11 @@
-import { useState, useEffect } from 'react'
-import { Navigate, useLocation } from 'react-router-dom'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useAuth } from '../contexts/AuthContext.jsx'
 import ImageUploader from '../components/upload/ImageUploader.jsx'
 import RecipeCard from '../components/recipes/RecipeCard.jsx'
 import { sampleRecipes } from '../utils/recipesData.js'
-import { dietaryFilters } from '../utils/constants.js'
-import { getApiUrl } from '../utils/constants.js'
+import { dietaryFilters, getApiUrl } from '../utils/constants.js'
 
 export default function UserDashboard() {
   const { user } = useAuth()
